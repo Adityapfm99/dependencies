@@ -1,0 +1,14 @@
+<openerp>
+	<data>
+		<record id="view_account_analytic_tagging" model="ir.ui.view">
+			<field name="name">view.account.analytic.tagging</field>
+			<field name="model">account.analytic.account</field>
+			<field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+			<field name="arch" type="xml">
+				<field name="manager_id" position="after">
+					<field name="tag"/>
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -13,7 +13,7 @@ from openerp.addons.web.controllers.main import login_redirect
 
 class analytic_api(http.Controller):
 
-	@http.route(['/api_analytic/',], type='http', auth="public")
+	@http.route(['/cabang/',], type='http', auth="public")
 	def api_analytic(self,**post):
 		cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
 		analytic_ids = pool.get('account.analytic.account').search(cr,SUPERUSER_ID,[('tag','=','gerai')])
@@ -29,5 +29,5 @@ class analytic_api(http.Controller):
 				'nama_provinsi': aa.parent_id and aa.parent_id.parent_id and aa.parent_id.parent_id.name or '',
 				'kode_provinsi': aa.parent_id and aa.parent_id.parent_id and aa.parent_id.parent_id.code or '',
 				})
-		print "===================",str(result)
+		# print "===================",str(result)
 		return str(result)

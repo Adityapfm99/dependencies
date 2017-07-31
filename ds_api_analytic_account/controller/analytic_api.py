@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 import werkzeug
+import json
 
 from openerp import SUPERUSER_ID
 from openerp import http
@@ -29,5 +30,5 @@ class analytic_api(http.Controller):
 				'nama_provinsi': aa.parent_id and aa.parent_id.parent_id and aa.parent_id.parent_id.name or '',
 				'kode_provinsi': aa.parent_id and aa.parent_id.parent_id and aa.parent_id.parent_id.code or '',
 				})
-		# print "===================",str(result)
-		return str(result)
+		final_result = {'kode_cabang':result}
+		return str(json.dumps(final_result))

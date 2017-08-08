@@ -17,7 +17,7 @@ class analytic_api(http.Controller):
 	@http.route(['/cabang/',], type='http', auth="public")
 	def api_analytic(self,**post):
 		cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-		analytic_ids = pool.get('account.analytic.account').search(cr,SUPERUSER_ID,[('tag','=','gerai')])
+		analytic_ids = pool.get('account.analytic.account').search(cr,SUPERUSER_ID,[('tag','in',['','',''])]) #perlu ada tambahan
 		analytic = pool.get('account.analytic.account').browse(cr,SUPERUSER_ID,analytic_ids)
 		result = []
 		for aa in analytic:

@@ -28,6 +28,8 @@ class analytic_api(http.Controller):
 				'nama_kota'	 : aa.parent_id and aa.parent_id.name or '',
 				'kode_kota'	 : aa.parent_id and aa.parent_id.code or '',
 				'nama_provinsi': aa.parent_id and aa.parent_id.parent_id and aa.parent_id.parent_id.name or '',
+				'id_rds':aa.rds_id or 'NULL',
+				'alias_name':aa.alias_name or 'NULL',
 				'kode_provinsi': aa.parent_id and aa.parent_id.parent_id and aa.parent_id.parent_id.code or '',
 				})
 		final_result = {'kode_cabang':result}

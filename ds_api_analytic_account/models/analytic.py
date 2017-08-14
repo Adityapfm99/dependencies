@@ -5,6 +5,8 @@ class account_analytic_account(osv.osv):
 
 	_columns = {
 		"active": fields.boolean("Active"),
+		"alias_name": fields.char("Alias Name"),
+		"rds_id"	: fields.integer("ID RDS"),
 		"tag"	: fields.selection([('provinsi',"Provinsi"),
 			('kota',"Kabupaten/Kota"),
 			('gerai',"Gerai"),

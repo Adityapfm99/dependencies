@@ -122,4 +122,4 @@ openerp.rating = function (instance) {
         RatingStarWidget: RatingStarWidget,
         rating_star_widgets: page_widgets,
     };
-});
+};

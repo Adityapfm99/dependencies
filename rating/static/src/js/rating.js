@@ -11,4 +11,4 @@ openerp.rating = function (openerp) {
 	    },
 	});
 
-});
+};

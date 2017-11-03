@@ -1,12 +1,10 @@
-odoo.define('rating.rating', function (require) {
-    "use strict";
+openerp.rating = function (instance) {
 
-    var Widget = require('web.Widget');
-    var translation = require('web.translation');
-    var _t = translation._t;
+    var QWeb = instance.web.qweb;
+    var _t = instance.web._t;
 
     // Star Widget
-    var RatingStarWidget = Widget.extend({
+    var RatingStarWidget = instance.web.Widget.extend({
         template: 'rating.rating_star_card',
         events: {
             "mousemove .stars i" : "moveOnStars",

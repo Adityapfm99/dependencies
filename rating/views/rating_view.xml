@@ -37,10 +37,10 @@
             <field name="name">rating.rating.pivot</field>
             <field name="model">rating.rating</field>
             <field name="arch" type="xml">
-                <pivot string="Rating Average" display_quantity="true">
+                <graph string="Rating Average" type="pivot" display_quantity="true">
                     <field name="res_name" type="row"/>
                     <field name="rating" type="measure"/>
-                </pivot>
+                </graph>
             </field>
         </record>
 

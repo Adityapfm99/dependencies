@@ -1,16 +1,14 @@
-odoo.define('rating.kanban', function(require) {
-"use strict";
+openerp.rating = function (openerp) {
+	"use strict";
 
-var KanbanRecord = require('web_kanban.Record');
-
-KanbanRecord.include({
-    on_card_clicked: function() {
-        if (this.model === 'rating.rating') {
-            this.$('a').first().click();
-        } else {
-            this._super.apply(this, arguments);
-        }
-    },
-});
+	openerp.web_kanban.KanbanRecord.include({
+	    on_card_clicked: function() {
+	        if (this.view.dataset.model === 'rating.rating') {
+	            this.$('.oe_applications a').first().click();
+	        } else {
+	            this._super.apply(this, arguments);
+	        }
+	    },
+	});
 
 });

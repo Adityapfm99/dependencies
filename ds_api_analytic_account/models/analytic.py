@@ -12,7 +12,6 @@ class account_analytic_account(osv.osv):
 			('kota',"Kabupaten/Kota"),
 			('gerai',"Gerai"),
 			('toko','Toko'),
-			('agen','Agen'),
 			('cabang','Cabang'),
 			('transit','Transit'),
 			('agen','Agen'),

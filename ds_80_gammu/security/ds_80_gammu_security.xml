@@ -1,0 +1,11 @@
+<openerp>
+	<data noupdate="1">
+		<record id="ds_80_gammu.group_gammu_inbox" model="res.groups">
+	        <field name="name">Gammu Inbox</field>
+	        <field name="comment">The user will be able to view gammu inbox</field>
+	        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+	    </record>
+
+	    
+	</data>
+</openerp>

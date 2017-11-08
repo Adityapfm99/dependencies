@@ -1,0 +1,72 @@
+<openerp>
+	<data>
+		<record id="view_gammu_outbox_tree" model="ir.ui.view">
+			<field name="name">gammu.outbox.tree</field>
+			<field name="model">gammu.outbox</field>
+			<field name="arch" type="xml">
+				<tree string="SMS Outbox">
+					<field name="phone_id" />
+					<field name="destination" />
+					<field name="type" />
+					<field name="len" />
+					<field name="outbox" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_gammu_outbox_search" model="ir.ui.view">
+			<field name="name">gammu.outbox.search</field>
+			<field name="model">gammu.outbox</field>
+			<field name="arch" type="xml">
+				<search string="SMS Outbox">
+					<field name="phone_id" />
+					<field name="destination" />
+					<field name="type" />
+					<field name="len" />
+					<field name="outbox" />
+					<field name="state" />
+				</search>
+			</field>
+		</record>
+		
+		<record id="view_gammu_outbox_form" model="ir.ui.view">
+			<field name="name">gammu.outbox.form</field>
+			<field name="model">gammu.outbox</field>
+			<field name="arch" type="xml">
+				<form string="SMS Outbox" version="7.0">
+					<header>
+						<button name="send_sms" type="object" string="Send SMS" class="oe_highlight"/>
+						<field name="state" widget="statusbar"/>
+					</header>
+					<sheet>
+					<group>
+						<group>
+							<field name="phone_id" />
+							<field name="destination" />
+							<field name="type" />
+							<field name="len" />
+							<field name="outbox" />
+						</group>
+					</group>
+					<notebook>
+						<page string="Messages">
+							<field name="message" nolabel="1" colspan="4"/>
+						</page>
+					</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_gammu_outbox" model="ir.actions.act_window">
+			<field name="name">SMS Outbox</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">gammu.outbox</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_gammu_outbox_search"/>
+		</record>
+		<menuitem action="action_gammu_outbox" id="menu_gammu_outbox" parent="menu_gammu_root" sequence="1" string="SMS Outbox"/>
+	</data>
+</openerp>

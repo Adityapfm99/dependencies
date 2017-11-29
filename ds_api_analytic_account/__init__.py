@@ -1,2 +1,2 @@
-from . import controller
+import controller
 from . import models

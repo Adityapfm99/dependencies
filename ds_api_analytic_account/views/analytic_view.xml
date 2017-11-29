@@ -10,6 +10,7 @@
 					<field name="rds_id"/>
 					<field name="tag"/>
 					<field name="active"/>
+					<field name='alamat_lengkap'/>
 				</field>
 			</field>
 		</record>

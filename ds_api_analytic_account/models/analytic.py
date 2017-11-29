@@ -8,6 +8,7 @@ class account_analytic_account(osv.osv):
 		"alias_name": fields.char("Alias Name"),
 		"rds_id"	: fields.integer("ID RDS"),
 		"tag"	: fields.selection([('head_office',"Head Office"),
+			('region','Region'),
 			('provinsi',"Provinsi"),
 			('kota',"Kabupaten/Kota"),
 			('gerai',"Gerai"),
@@ -17,8 +18,9 @@ class account_analytic_account(osv.osv):
 			('agen','Agen'),
 			('pusat_transitan','Pusat Transitan'),
 			('perwakilan',"Perwakilan"),
-			('other',"Lainnya")],"Category")
+			('other',"Lainnya")],"Category"),
 		# "perwakilan_ids": fields.many2many("account.analytic.perwakilan","analytic_account_perwakilan_rel")
+		"alamat_lengkap": fields.text("Alamat Lengkap")
 	}
 
 	_defaults ={

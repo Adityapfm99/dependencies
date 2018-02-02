@@ -1,0 +1,62 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="register_server_form_view">
+            <field name="name">register.server.form</field>
+            <field name="model">register.server</field>
+            <field name="arch" type="xml">
+                <form string="Register Server">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="url"/>
+                                <field name="database_type"/>
+                                <field name="port"/>
+                            </group>
+                            <group>
+                                <field name="username"/>
+                                <field name="password"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="register_server_tree_view">
+            <field name="name">register.server.tree</field>
+            <field name="model">register.server</field>
+            <field name="arch" type="xml">
+                <tree string="Register Server Tree">
+                    <field name="url"/>
+                    <field name="database_type"/>
+                    <field name="port"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="register_server_search_view">
+            <field name="name">register.server.search</field>
+            <field name="model">register.server</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="url"/>
+                    <field name="database_type"/>
+                    <field name="port"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_register_server">
+            <field name="name">Register Server</field>
+            <field name="res_model">register.server</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="register_server_menu"
+            name="Register Server"
+            parent="base.next_id_9" 
+            action="action_register_server"/>
+        
+    </data>
+</openerp>

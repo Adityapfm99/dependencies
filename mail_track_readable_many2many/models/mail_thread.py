@@ -19,8 +19,15 @@ class mail_thread(osv.AbstractModel):
                 return value.name_get()[0][1]
             if col_info['type'] == 'selection':
                 return dict(col_info['selection'])[value]
+            #add by writer
             if col_info['type'] == 'many2many':
                 return ', '.join([val.name_get()[0][1] for val in value])
+            if col_info['type'] == 'float':
+                lang_code = context.get('lang') or 'en_US'
+                lang = self.pool['res.lang']
+                digits = col_info.get('digits', False)
+                fmt = "%.{0}f".format(digits and digits[1] or 0)
+                return lang.format(cr, uid, [lang_code], fmt, value, grouping=True)
             return value
 
         def format_message(message_description, tracked_values):

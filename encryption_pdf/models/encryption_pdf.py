@@ -8,8 +8,8 @@ class Report(models.Model):
 	def get_pdf(self, cr, uid, ids, report_name, html=None, data=None, context=None):
 		result = super(Report, self).get_pdf(cr, uid, ids, report_name, html=html, data=data, context=context)
 
-		if context.get('set_password',False):
-			password = context.get('set_password')
+		if context.get('set_password'):
+			password = context['set_password']
 
 			unencrypted_file = cStringIO.StringIO()
 			unencrypted_file.write(result)

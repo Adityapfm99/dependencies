@@ -13,5 +13,6 @@
 
     # any module necessary for this one to work correctly
     'depends': ['report'],
+    'external_dependencies': {'python': ['PyPDF2']},
     'data': [],
 }

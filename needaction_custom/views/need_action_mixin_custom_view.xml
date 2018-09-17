@@ -1,0 +1,52 @@
+<openerp>
+	<data>
+		<record id="need_action_mixin_custom_tree" model="ir.ui.view">
+            <field name="name">needaction.mixin.custom.tree</field>
+            <field name="model">needaction.mixin.custom</field>
+            <field name="arch" type="xml">
+                <tree string="Need Action Mixin Custom">
+                    <field name="usage"/>
+                    <field name="model_id"/>
+                    <field name="menu_id"/>
+                    <field name="act_window_id"/>
+                    <field name="act_client_id"/>
+                    <field name="default_domain"/>
+                    <field name="default_count"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="need_action_mixin_custom_form" model="ir.ui.view">
+            <field name="name">needaction.mixin.custom.form</field>
+            <field name="model">needaction.mixin.custom</field>
+            <field name="arch" type="xml">
+                <form string="Need Action Mixin Custom">
+                    <sheet>
+                    	<group>
+                    		<group>
+			                    <field name="usage"/>
+			                    <field name="model_id"/>
+			                    <field name="menu_id" attrs="{'invisible':[('usage','!=','menu')]}"/>
+			                    <field name="act_window_id" attrs="{'invisible':[('usage','!=','menu')]}"/>
+			                    <field name="act_client_id" attrs="{'invisible':[('usage','!=','menu')]}"/>
+			                    <field name="default_domain"/>
+			                    <field name="default_count"/>
+							</group>
+						</group>
+					</sheet>                    
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_need_action_mixin_custom">
+            <field name="name">NeedAction Custom Value</field>
+            <field name="res_model">needaction.mixin.custom</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_action_need_action_mixin_custom" name="NeedAction Custom Value" 
+                  parent="base.next_id_6"
+                  action="action_need_action_mixin_custom" sequence="11"/>
+	</data>
+</openerp>

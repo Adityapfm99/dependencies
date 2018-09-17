@@ -9,12 +9,12 @@
     'website': 'http://www.sicepat.com',
     'depends': [
         'base',
-        'account',
+        # 'account',
     ],
     'demo_xml': [
     ],
     'data': [
-
+        "views/need_action_mixin_custom_view.xml",
     ],
     'js': [
     ],

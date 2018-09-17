@@ -1,1 +1,1 @@
-from . import mail_message
+from . import need_action_mixin
